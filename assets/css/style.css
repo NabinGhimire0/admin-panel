@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* navbar */
+.navbar {
+    background-color: #647D87;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 25px;
+}
+
+.nav-links {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    border-radius: 3px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    width: 200px;
+    height: 36px;
+    border: none;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.search-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: #647D87;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.notification-box {
+    display: none;
+    position: fixed;
+    top: 100px;
+    right: 6%;
+    width: 20%;
+    background-color: #fff;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.notification-card {
+    display: grid;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.notification-card a {
+    text-decoration: none;
+    color: black;
+    background-color: #B6C4B6;
+    padding: 5px;
+    border-radius: 5px;
+    overflow-x: auto;
+
+}
+
+.account-card {
+    display: none;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 30%;
+    background-color: #fff;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 1000;
+}
+
+.account-card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.account-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: #1f3a6f;
+    cursor: pointer;
+}
+
+.account-button {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 6px;
+    align-items: center;
+    justify-items: center;
+}
+
+.line {
+    display: none;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        padding: 8px;
+        position: fixed;
+        align-items: center;
+        justify-content: start;
+        top: 100px;
+        background-color: #647D87;
+        border: 2px solid white;
+    }
+
+    .profile-section {
+        margin-top: 8px;
+    }
+
+    .line {
+        display: block;
+        width: 80%;
+        color: white;
+        margin-top: 8px;
+    }
+
+    .account-card {
+        display: none;
+        position: fixed;
+        top: calc(100vh - 200px);
+        right: 0;
+        width: 100%;
+        background-color: #fff;
+        color: black;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        z-index: 1000;
+    }
+
+    .notification-box {
+        display: none;
+        position: fixed;
+        top: calc(100vh - 200px);
+        right: 0;
+        width: 100%;
+        background-color: #fff;
+        color: black;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        z-index: 1000;
+    }
+}
+
+/* end */
+
+.main-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: calc(100vh - 100px);
+}
+
+/* sidebar */
+.sidebar {
+    background-color: #9DB2BF;
+    width: 200px;
+    height: 100%;
+    overflow-y: auto;
+    color: white;
+    padding: 16px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+}
+
+.sidebar-btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #F8F8F8;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.sidebar-btn p {
+    font-size: 18px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.sidebar-btn i {
+    font-size: 24px;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.active {
+    background-color: #3468C0;
+    color: white;
+}
+
+/* sidebar end */
+.main-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.content-title {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.content-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-btn {
+    width: 100px;
+    height: 36px;
+    border: none;
+    background-color: #65B741;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    background-color: #3f5f1f;
+}
+
+.edit-btn {
+    width: 80px;
+    height: 36px;
+    border: none;
+    background-color: #3468C0;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.edit-btn:hover {
+    background-color: #1f3a6f;
+}
+
+.delete-btn {
+    width: 80px;
+    height: 36px;
+    border: none;
+    background-color: #FF004D;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.delete-btn:hover {
+    background-color: #b0002b;
+}
+
+.required-span {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/form.css">
+    <link rel="stylesheet" href="/assets/css/table.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Admin-Dashboard</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- logo -->
+        <div class="logo">
+            <h2>Welcome !!</h2>
+        </div>
+        <!-- searchbox -->
+        <div class="search-box">
+            <input type="text" placeholder="   Search here">
+            <button class="search-btn"><i class='bx bx-search-alt-2' style="font-size: 28px;"></i></button>
+        </div>
+        <div class="profile-section">
+            <div class="message">
+                <i class='bx bx-message-rounded' style="font-size: 28px;"></i>
+            </div>
+            <div class="notification" style="cursor: pointer;" onclick="toogleNotification()">
+                <i class='bx bx-bell' style="font-size: 28px;"></i>
+            </div>
+            <div class="notification-box" id="notificationBox">
+                <div class="notification-card">
+                    <a href="">
+                        <p>New Order received. click here to see</p>
+                    </a>
+                    <a href="">
+                        <p>Notification 1</p>
+                    </a>
+                </div>
+            </div>
+            <div class="account">
+                <div class="profile-photo" onclick="toggleCard()">
+                    <img src="/assets/images/profile.png" alt="profile photo">
+                </div>
+                <div class="account-card" id="accountCard">
+                    <div class="account-card-container">
+                        <div class="info">
+                            <div class="account-info">
+                                <h4>Name: User</h4>
+                                <h4>Email: user12@gmail.com</h4>
+                                <h4>Role: Admin</h4>
+                            </div>
+                            <div class="account-photo">
+
+                            </div>
+                        </div>
+                        <div class="account-button">
+                            <button class="edit-btn" style="width: 70%; height: 30px;">Manage Password</button>
+                            <button class="delete-btn" style="width: 70%; height: 30px;">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Navbar -->
+    <div class="main-container">
+        <!-- sidebar -->
+        <div class="sidebar">
+            <a href="/index.html">
+                <div class="sidebar-btn">
+                    <p>Dashboard</p>
+                    <i class='bx bxs-dashboard'></i>
+                </div>
+            </a>
+            <!-- First dropdown -->
+            <div class="dropdown">
+                <div class="sidebar-btn" onclick="toggleDropdown('dropdown1')">
+                    <p>DropDown 1</p>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div id="dropdown1" class="dropdown-content">
+                    <a href="#">
+                        <div class="sidebar-btn">
+                            <p>Content 1</p>
+                            <i class='bx bxs-dashboard'></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="sidebar-btn">
+                            <p>Content 2</p>
+                            <i class='bx bxs-dashboard'></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Second dropdown -->
+            <div class="dropdown">
+                <div class="sidebar-btn" onclick="toggleDropdown('dropdown2')">
+                    <p>DropDown 2</p>
+                    <i class='bx bxs-chevron-down'></i>
+                </div>
+                <div id="dropdown2" class="dropdown-content">
+                    <a href="#">
+                        <div class="sidebar-btn">
+                            <p>Content 3</p>
+                            <i class='bx bxs-dashboard'></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="sidebar-btn">
+                            <p>Content 4</p>
+                            <i class='bx bxs-dashboard'></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- end of dropdowns -->
+            <a href="form.html">
+                <div class="sidebar-btn">
+                    <p>Form</p>
+                    <i class='bx bx-clipboard' ></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="sidebar-btn active">
+                    <p>Table</p>
+                    <i class='bx bx-table'></i>
+                </div>
+            </a>
+        </div>
+        <!-- End of Sidebar -->
+
+        <!-- content -->
+        <div class="main-content">
+            <div class="content">
+                <div class="content-title">
+                    <h1>Table</h1>
+                    <button class="add-btn">Add</button>
+                </div>
+                <div class="content-box">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nabin</td>
+                                <td>qM5hO@example.com</td>
+                                <td>Dhaka</td>
+                                <td>1234567890</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Nabin</td>
+                                <td>qM5hO@example.com</td>
+                                <td>Dhaka</td>
+                                <td>1234567890</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>demo</td>
+                                <td>qM5hO@example.com</td>
+                                <td>demo</td>
+                                <td>1234567890</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- End of content -->
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="/assets/js/chart.js"></script>
+        <script src="/assets/js/dropdown.js"></script>
+        <script src="/assets/js/tableSearch.js"></script>
+
+</body>
+
+</html>
